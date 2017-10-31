@@ -1,1 +1,40 @@
-Your instructions for this page are in the README.md. Enjoy!
+<h1> Rank 1 </h1>
+<table>
+  <tbody>
+    <% User.rank1.each do |user| %>
+      <tr>
+        <td><%= user.name %> </td>
+        <td><%= user.crypted_name %> </td>
+        <td><%= user.group_count %> </td>
+        <td><%= user.group_names.split(",").to_s %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1> Rank 2 </h1>
+<table>
+  <tbody>
+    <% User.rank2.each do |user| %>
+      <tr>
+        <td><%= user.group_name %> </td>
+        <td><%= user.name %> </td>
+        <td><%= user.mapviews %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1> Rank 3 </h1>
+<table>
+  <tbody>
+    <% User.rank3.each do |user| %>
+      <tr>
+        <td><%= user.group_name %> </td>
+        <td><%= user.name %> </td>
+        <td><%= user.mapviews %> </td>
+        <td><%= format("%.2f", user.percent.to_f) %>% </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
